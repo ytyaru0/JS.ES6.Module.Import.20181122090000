@@ -1,3 +1,7 @@
-import Sub from 'Sub';
+import {Sub} from './sub.js';
 const sub = new Sub();
-sub.Method();
+sub.subMethod();
+
+import {Sub2} from './sub.js';
+const sub2 = new Sub2();
+sub2.subMethod2();

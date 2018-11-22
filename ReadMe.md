@@ -48,6 +48,34 @@ class Sub {...}
 export const SubInstance = new Sub();
 ```
 
+# 遭遇したエラー
+
+## ローカル実行ではインポート不可
+
+```
+Access to Script at 'file:///tmp/work/JS.ES6.Module.Import.20181122090000/src/0/main.js' from origin 'null' has been blocked by CORS policy: Invalid response. Origin 'null' is therefore not allowed access.
+```
+
+　CORS制約により不可。ローカルサーバを立てる必要がある。
+
+## 相対パスの表記ルール
+
+```
+Uncaught TypeError: Failed to resolve module specifier "Sub". Relative references must start with either "/", "./", or "../".
+```
+
+　`モジュール指定子 "Sub"の解決に失敗しました。相対参照は "/"、 "./"、または "../"のいずれかで始まらなければなりません。`ということらしい。
+
+## default exportをインポートできない
+
+```
+Uncaught SyntaxError: The requested module './sub.js' does not provide an export named 'Sub'
+```
+
+　`要求されたモジュール './sub.js'は 'Sub'という名前のエクスポートを提供しません`。
+
+　原因不明。未実装と思われる。
+
 # 開発環境
 
 * [Raspberry Pi](https://ja.wikipedia.org/wiki/Raspberry_Pi) 3 Model B+

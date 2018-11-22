@@ -1,3 +1,3 @@
-import Sub from './Sub.js';
+import Sub from 'Sub';
 const sub = new Sub();
 sub.Method();
