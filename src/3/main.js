@@ -1,3 +1,3 @@
-import {Sub} from 'Sub';
+import {Sub} from 'sub';
 const sub = new Sub();
 sub.Method();
