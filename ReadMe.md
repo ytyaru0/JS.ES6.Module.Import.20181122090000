@@ -27,26 +27,34 @@ index.html
 
 main.js
 ```javascript
-import Sub from "Sub";
+import Sub from "./Sub.js";
 ```
+
+　相対パスは必ず先頭に`/`,`./`,`../`を付与せねばならない。
 
 modules/Sub.js
 ```javascript
 export default class Sub {...}
 ```
 
+* [demo/2](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/2/index.html)
+* [demo/5](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/5/index.html)
+
 ## 名前付きexport/import
 
 main.js
 ```javascript
-import {SubInstance} from "modules/Sub";
+import {Sub1} from "./Sub.js";
+import {Sub2} from "./Sub.js";
 ```
 
 modules/Sub.js
 ```javascript
-class Sub {...}
-export const SubInstance = new Sub();
+export class Sub1 {...}
+export class Sub2 {...}
 ```
+
+* [demo/0](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/2/index.html)
 
 # 遭遇したエラー
 
@@ -58,23 +66,28 @@ Access to Script at 'file:///tmp/work/JS.ES6.Module.Import.20181122090000/src/0/
 
 　CORS制約により不可。ローカルサーバを立てる必要がある。
 
-## 相対パスの表記ルール
-
-```
-Uncaught TypeError: Failed to resolve module specifier "Sub". Relative references must start with either "/", "./", or "../".
-```
-
-　`モジュール指定子 "Sub"の解決に失敗しました。相対参照は "/"、 "./"、または "../"のいずれかで始まらなければなりません。`ということらしい。
-
 ## default exportをインポートできない
 
 ```
 Uncaught SyntaxError: The requested module './sub.js' does not provide an export named 'Sub'
 ```
 
+* [demo/1](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/1/index.html)
+
 　`要求されたモジュール './sub.js'は 'Sub'という名前のエクスポートを提供しません`。
 
 　原因不明。未実装と思われる。
+
+## 相対パスの表記ルール
+
+```
+Uncaught TypeError: Failed to resolve module specifier "Sub". Relative references must start with either "/", "./", or "../".
+```
+
+* [demo/3](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/3/index.html)
+* [demo/4](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/src/3/index.html)
+
+　`モジュール指定子 "Sub"の解決に失敗しました。相対参照は "/"、 "./"、または "../"のいずれかで始まらなければなりません。`ということらしい。
 
 # 開発環境
 
