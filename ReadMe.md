@@ -1,6 +1,6 @@
 ﻿# このソフトウェアについて
 
-　JavaScript(ES6)で`import`を使う。[demo](https://ytyaru.github.io/JS.ES6.Module.Import.20181122090000)
+　JavaScript(ES6)で`import`を使う。[demo](https://ytyaru0.github.io/JS.ES6.Module.Import.20181122090000/)
 
 # 参考
 
